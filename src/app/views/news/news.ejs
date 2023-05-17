@@ -22,11 +22,12 @@
                         <th>TITLE</th>
                         <th>NEWS</th>
                     </tr>
-                    <% for(var i = 0; i < news.length; i++) { %> 
+                    <% for(var i = news.length-1; i >=0; i--) { %> 
                         <tr>
                             <td><%= news[i].id_news %></td>
                             <td><%= news[i].title %></td>
                             <td><%= news[i].news %></td>
+                            <td clas="row"><%= news[i].data_created.toISOString().slice(0, 10) %></td>
                             <td class="d-flex">
                                 <a class="btn btn-success edit mt-1" href="">Edit</a>
                                 <a class="btn btn-danger delete mt-1" onclick="return alert('Are you sure want to delete this record?')" href="">Delete</a> 
